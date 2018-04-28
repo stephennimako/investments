@@ -12,7 +12,7 @@
             <div class="modal-body">
               <h2 class="text-uppercase"><%=investment.title%></h2>
               <p class="item-intro text-muted"><%=investment.status%></p>
-              <img class="img-fluid d-block mx-auto" src="<%= image_path(investment.main.asset.url) %>" alt="">
+              <%= render partial: 'carousel', locals: {images: get_carousel_images(investment)} %>
               <p><%=investment.description%></p>
               <ul class="list-inline">
                 <li>Asking price: £<%=investment.asking_price%></li>
