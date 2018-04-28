@@ -5,6 +5,7 @@ one:
   description: MyText
   status: MyString
   asking_price: 1
+  agreed_price: 1
   refurbishment_cost: 1
   cash_flow: 1
   flip_profit: 1
@@ -15,6 +16,7 @@ two:
   description: MyText
   status: MyString
   asking_price: 1
+  agreed_price: 1
   refurbishment_cost: 1
   cash_flow: 1
   flip_profit: 1
