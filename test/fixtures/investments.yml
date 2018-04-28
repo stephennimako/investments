@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  status: MyString
+  asking_price: 1
+  refurbishment_cost: 1
+  cash_flow: 1
+  flip_profit: 1
+  done_up_value: 1
+
+two:
+  title: MyString
+  description: MyText
+  status: MyString
+  asking_price: 1
+  refurbishment_cost: 1
+  cash_flow: 1
+  flip_profit: 1
+  done_up_value: 1

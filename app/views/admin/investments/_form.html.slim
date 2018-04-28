@@ -1,0 +1,43 @@
+= simple_form_for(['admin', @item]) do |f|
+  header.content-header.js-content-header
+    == render 'fae/shared/form_header', header: @klass_name
+  == render 'fae/shared/errors'
+
+  main.content
+    = fae_input f, :title
+    = fae_input f, :description
+    = fae_input f, :status
+    = fae_input f, :asking_price
+    = fae_input f, :refurbishment_cost
+    = fae_input f, :cash_flow
+    = fae_input f, :flip_profit
+    = fae_input f, :done_up_value
+
+
+    = fae_image_form f, :main
+    = fae_image_form f, :front_of_house_before
+    = fae_image_form f, :back_of_house_before
+    = fae_image_form f, :garden_before
+    = fae_image_form f, :kitchen_before
+    = fae_image_form f, :bathroom_before
+    = fae_image_form f, :reception_1_before
+    = fae_image_form f, :reception_2_before
+    = fae_image_form f, :bedroom_1_before
+    = fae_image_form f, :bedroom_2_before
+    = fae_image_form f, :bedroom_3_before
+    = fae_image_form f, :extra_1_before
+    = fae_image_form f, :extra_2_before
+    = fae_image_form f, :extra_3_before
+    = fae_image_form f, :front_of_house_after
+    = fae_image_form f, :back_of_house_after
+    = fae_image_form f, :garden_after
+    = fae_image_form f, :kitchen_after
+    = fae_image_form f, :bathroom_after
+    = fae_image_form f, :reception_1_after
+    = fae_image_form f, :reception_2_after
+    = fae_image_form f, :bedroom_1_after
+    = fae_image_form f, :bedroom_2_after
+    = fae_image_form f, :bedroom_3_after
+    = fae_image_form f, :extra_1_after
+    = fae_image_form f, :extra_2_after
+    = fae_image_form f, :extra_3_after
