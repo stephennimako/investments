@@ -1,9 +1,18 @@
 class Investment < ApplicationRecord
   include Fae::BaseModelConcern
 
+  BEFORE_IMAGES = %w(front_of_house_before back_of_house_before garden_before kitchen_before bathroom_before
+                    reception_1_before reception_2_before bedroom_1_before bedroom_2_before bedroom_3_before
+                    extra_1_before extra_2_before extra_3_before)
+
   def fae_display_field
     title
   end
+
+  has_many :before_images, -> {where(attached_as: BEFORE_IMAGES)},
+           as: :imageable,
+           class_name: '::Fae::Image',
+           dependent: :destroy
 
   has_fae_image :extra_3_after
 
