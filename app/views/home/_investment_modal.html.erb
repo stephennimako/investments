@@ -15,12 +15,12 @@
               <%= render partial: 'carousel', locals: {images: get_carousel_images(investment)} %>
               <p><%=investment.description%></p>
               <ul class="list-inline">
-                <li>Asking price: £<%=investment.asking_price%></li>
-                <li>Agreed price: £<%=investment.agreed_price%></li>
-                <li>Done up value: £<%=investment.done_up_value%></li>
-                <li>Refurbishment cost: £<%=investment.refurbishment_cost%></li>
-                <li>Cash Flow as BTL: £<%=investment.cash_flow%></li>
-                <li>Flip profit: £<%=investment.flip_profit%></li>
+                <li>Asking price: <%=format_price investment.asking_price%></li>
+                <li>Agreed price: <%=format_price investment.agreed_price%></li>
+                <li>Done up value: <%=format_price investment.done_up_value%></li>
+                <li>Refurbishment cost: <%=format_price investment.refurbishment_cost%></li>
+                <li>Cash Flow as BTL: <%=format_price investment.cash_flow%></li>
+                <li>Flip profit: <%=format_price investment.flip_profit%></li>
               </ul>
               <button class="btn btn-primary" data-dismiss="modal" type="button">
                 <i class="fa fa-times"></i>
