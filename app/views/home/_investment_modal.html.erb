@@ -11,7 +11,7 @@
           <div class="col-lg-8 mx-auto">
             <div class="modal-body">
               <h2 class="text-uppercase"><%=investment.title%></h2>
-              <p class="item-intro text-muted"><%=investment.status%></p>
+              <p class="item-intro text-muted"><%=get_status investment%></p>
               <%= render partial: 'carousel', locals: {images: get_carousel_images(investment)} %>
               <p><%=investment.description%></p>
               <ul class="list-inline">

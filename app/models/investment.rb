@@ -9,6 +9,8 @@ class Investment < ApplicationRecord
     title
   end
 
+  belongs_to :status
+
   has_many :before_images, -> {where(attached_as: BEFORE_IMAGES)},
            as: :imageable,
            class_name: '::Fae::Image',

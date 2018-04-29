@@ -9,4 +9,8 @@ module HomeHelper
   def format_price price
     number_to_currency(price, unit: '£', precision: 0)
   end
+
+  def get_status investment
+    investment.status.name
+  end
 end

@@ -6,7 +6,7 @@
   main.content
     = fae_input f, :title
     = fae_input f, :description
-    = fae_input f, :status
+    = fae_pulldown f, :status, size: 'short', collection: Status.order(:name)
     = fae_input f, :asking_price
     = fae_input f, :agreed_price
     = fae_input f, :refurbishment_cost
