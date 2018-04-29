@@ -5,11 +5,22 @@ class Investment < ApplicationRecord
                     reception_1_before reception_2_before bedroom_1_before bedroom_2_before bedroom_3_before
                     extra_1_before extra_2_before extra_3_before)
 
+  AFTER_IMAGES = %w(front_of_house_after back_of_house_after garden_after kitchen_after bathroom_after
+                    reception_1_after reception_2_after bedroom_1_after bedroom_2_after bedroom_3_after
+                    extra_1_after extra_2_after extra_3_after)
+
   def fae_display_field
     title
   end
 
+  belongs_to :status
+
   has_many :before_images, -> {where(attached_as: BEFORE_IMAGES)},
+           as: :imageable,
+           class_name: '::Fae::Image',
+           dependent: :destroy
+
+  has_many :after_images, -> {where(attached_as: AFTER_IMAGES)},
            as: :imageable,
            class_name: '::Fae::Image',
            dependent: :destroy

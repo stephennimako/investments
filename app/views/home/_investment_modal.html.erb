@@ -10,9 +10,13 @@
         <div class="row">
           <div class="col-lg-8 mx-auto">
             <div class="modal-body">
-              <h2 class="text-uppercase"><%=investment.title%></h2>
-              <p class="item-intro text-muted"><%=investment.status%></p>
-              <%= render partial: 'carousel', locals: {images: get_carousel_images(investment)} %>
+              <h3 class="text-uppercase"><%=investment.title%></h3>
+              <p class="item-intro text-muted"><%=get_status investment%></p>
+              <% if investment.status.refurbishment_complete? %>
+                <%= render partial: 'comparison_carousel', locals: {images: get_comparison_images(investment)} %>
+              <% else %>
+                <%= render partial: 'carousel', locals: {images: get_images(investment)} %>
+              <% end %>
               <p><%=investment.description%></p>
               <ul class="list-inline">
                 <li>Asking price: <%=format_price investment.asking_price%></li>

@@ -1,0 +1,8 @@
+<div class="scroller">
+  <% images.each do |image| %>
+    <div class="twentytwenty-container">
+      <%= image_tag(image[:before]) %>
+      <%= image_tag(image[:after]) %>
+    </div>
+  <% end %>
+</div>
