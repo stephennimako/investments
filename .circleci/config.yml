@@ -5,8 +5,17 @@ jobs:
       - image: circleci/ruby:2.5.1-node-browsers
     steps:
       - checkout
-      - run:
-          name: Testing application
-          command:  |
-            bundle install
-            rails test
+
+      - type: cache-restore
+        name: Restore bundle cache
+        key: investments-{{ checksum "Gemfile.lock" }}
+
+      - run: bundle install --path vendor/bundle
+
+      - type: cache-save
+        name: Store bundle cache
+        key: investments-{{ checksum "Gemfile.lock" }}
+        paths:
+          - vendor/bundle
+
+      - run: rails test
