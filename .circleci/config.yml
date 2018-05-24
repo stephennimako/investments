@@ -1,8 +1,21 @@
 version: 2
 jobs:
   build:
-    docker: # See https://docs.docker.com/get-started/#docker-concepts if you are new to Docker.
-      - image: circleci/ruby:2.5.1
+    docker:
+      - image: circleci/ruby:2.5.1-node-browsers
     steps:
       - checkout
-      - run: echo "A first hello"
+
+      - type: cache-restore
+        name: Restore bundle cache
+        key: investments-{{ checksum "Gemfile.lock" }}
+
+      - run: bundle install --path vendor/bundle
+
+      - type: cache-save
+        name: Store bundle cache
+        key: investments-{{ checksum "Gemfile.lock" }}
+        paths:
+          - vendor/bundle
+
+      - run: bundle exec rake
