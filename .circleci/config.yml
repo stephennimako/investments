@@ -18,4 +18,4 @@ jobs:
         paths:
           - vendor/bundle
 
-      - run: rails test
+      - run: bundle exec rake
