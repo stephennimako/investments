@@ -1,0 +1,18 @@
+                  List of relations
+ Schema |         Name         | Type  |    Owner    
+--------+----------------------+-------+-------------
+ public | ar_internal_metadata | table | investments
+ public | fae_changes          | table | investments
+ public | fae_files            | table | investments
+ public | fae_images           | table | investments
+ public | fae_options          | table | investments
+ public | fae_roles            | table | investments
+ public | fae_static_pages     | table | investments
+ public | fae_text_areas       | table | investments
+ public | fae_text_fields      | table | investments
+ public | fae_users            | table | investments
+ public | investments          | table | investments
+ public | schema_migrations    | table | investments
+ public | statuses             | table | investments
+(13 rows)
+

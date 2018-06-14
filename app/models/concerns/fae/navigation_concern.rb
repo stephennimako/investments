@@ -25,7 +25,7 @@ module Fae
 
     def structure
       [
-        item('Investments', path: admin_investments_path),
+        item('Rent To Rents', path: admin_rent_to_rents_path),
         # scaffold inject marker
       ]
     end

@@ -1,0 +1,24 @@
+= simple_form_for(['admin', @item]) do |f|
+  header.content-header.js-content-header
+    == render 'fae/shared/form_header', header: @klass_name
+  == render 'fae/shared/errors'
+
+  main.content
+    = fae_input f, :title
+    = fae_input f, :description
+
+
+    = fae_image_form f, :main
+    = fae_image_form f, :front_of_house
+    = fae_image_form f, :back_of_house
+    = fae_image_form f, :garden
+    = fae_image_form f, :kitchen
+    = fae_image_form f, :bathroom
+    = fae_image_form f, :reception_1
+    = fae_image_form f, :reception_2
+    = fae_image_form f, :bedroom_1
+    = fae_image_form f, :bedroom_2
+    = fae_image_form f, :bedroom_3
+    = fae_image_form f, :extra_1
+    = fae_image_form f, :extra_2
+    = fae_image_form f, :extra_3

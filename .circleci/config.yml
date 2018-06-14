@@ -3,6 +3,16 @@ jobs:
   build:
     docker:
       - image: circleci/ruby:2.5.1-node-browsers
+        environment:
+          PGHOST: 127.0.0.1
+          PGUSER: investments-test
+          RAILS_ENV: test
+      - image: circleci/postgres:9.5-alpine
+        environment:
+          POSTGRES_USER: investments
+          POSTGRES_DB: investments-test
+          POSTGRES_PASSWORD: password
+
     steps:
       - checkout
 
@@ -18,7 +28,18 @@ jobs:
         paths:
           - vendor/bundle
 
-      - run: bundle exec rake
+      - run:
+          name: Wait for DB
+          command: dockerize -wait tcp://localhost:5432 -timeout 1m
+
+      - run:
+          name: Database setup
+          command: |
+            bundle exec rake db:create db:schema:load --trace && bundle exec rake db:migrate
+
+      - run:
+          name: Run tests
+          command: bundle exec rake
 
   deploy:
     docker:

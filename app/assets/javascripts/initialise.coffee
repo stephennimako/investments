@@ -4,7 +4,6 @@ jQuery(document).ready ->
     cssEase: 'linear',
     speed: 250,
     dots: true,
-    draggable: false,
     responsive: [
       {
         breakpoint: 580,
@@ -22,8 +21,7 @@ jQuery(document).ready ->
   })
 
   $('.portfolio-modal').on('shown.bs.modal', ->
-    $('.scroller:visible').resize();
-    $('.scroller:visible').slick('setPosition'));
+    $('.scroller').resize());
 
 
 

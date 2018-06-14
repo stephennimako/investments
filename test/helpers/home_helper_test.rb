@@ -1,7 +1,13 @@
-require_relative '../../app/helpers/home_helper'
+require 'test_helper'
 
 class HomeHelperTest < ActionView::TestCase
-  test 'should format price' do
-    assert_equal(format_price(10000), '£10,000')
+  test 'portfolio is present' do
+    rent_to_rents = [rent_to_rents(:one)]
+    assert_equal portfolio_present?(rent_to_rents), true
   end
+
+  test 'portfolio is not present' do
+    assert_equal portfolio_present?([]), false
+  end
+
 end
