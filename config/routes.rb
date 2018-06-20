@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   mount Fae::Engine => '/admin'
 
   root 'home#index'
+  post '/contact' => 'home#contact'
 end
